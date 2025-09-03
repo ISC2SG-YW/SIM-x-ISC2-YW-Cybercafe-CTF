@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Menu — Yummy Yummer{% endblock %}
+
+{% block styles %}
+<style>
+  /* match home hero style locally so it always renders */
+  .yy-hero {
+    background: radial-gradient(1200px 600px at 85% -100px, #ffd000 0%, rgba(255,208,0,0) 60%),
+                linear-gradient(180deg, #c70017 0%, #990012 100%);
+    color: #fff;
+  }
+  .yy-hero h1 { font-weight: 800; letter-spacing: -0.5px; }
+</style>
+{% endblock %}
+
+{% block content %}
+  <!-- Top band / hero -->
+  <section class="yy-hero rounded-4 p-4 p-md-5 shadow-sm mb-3">
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-2">
+      <div>
+        <h1 class="display-6 mb-1">Menu</h1>
+        <p class="mb-0">
+          {% if q %}Results for “{{ q|e }}”{% else %}All active items{% endif %}
+        </p>
+      </div>
+      <span class="badge bg-light text-dark">{{ items|length }} item{{ '' if items|length == 1 else 's' }}</span>
+    </div>
+  </section>
+
+  {% if items and items|length %}
+    <div class="table-responsive">
+      <table class="table table-hover align-middle">
+        <thead class="table-light">
+          <tr>
+            <th style="width:12rem;">SKU</th>
+            <th>Name</th>
+            <th style="width:10rem;">Category</th>
+            <th class="text-end" style="width:8rem;">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in items %}
+            <tr>
+              <td class="font-mono">{{ item.sku }}</td>
+              <td>{{ item.name }}</td>
+              <td><span class="badge text-bg-primary text-uppercase">{{ item.category }}</span></td>
+              <td class="text-end">S${{ (item.price_cents / 100.0) | round(2) }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <div class="alert alert-warning">No items found. Try another search.</div>
+  {% endif %}
+{% endblock %}

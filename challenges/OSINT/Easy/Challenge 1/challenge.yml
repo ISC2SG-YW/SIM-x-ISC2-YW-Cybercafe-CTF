@@ -1,0 +1,42 @@
+name: "Cloud Leaks"
+author: "Stabb"
+category: OSINT
+description: |
+  Sometimes the biggest leaks aren’t on the dark web… they’re hiding in plain sight.  
+
+  We intercepted a strange keyword during our investigation: **osint-ctf-holiday-2025**.  
+  It might be more than just a random string — rumor says it’s connected to a public
+  Google Cloud Storage bucket left wide open.  
+
+  Your mission:  
+  • Track down the exposed bucket.  
+  • Use the token to figure out the bucket’s name.  
+  • Find the flag inside the bucket that can be found in common wordlists.
+
+  Submit the contents of the flag file exactly as shown (including braces).
+
+  Example (format only): flag{<XXX>}
+value: 1000
+type: dynamic
+extra:
+  initial: 1000
+  decay: 25
+  minimum: 100
+
+flags:
+  - flag{Cloud_OSINT_1337}
+
+topics:
+  - OSINT
+  - Cloud
+  - Buckets
+
+tags:
+  - osint
+  - gcp
+  - bucket
+  - cloud
+
+files: []
+
+version: "1.0"

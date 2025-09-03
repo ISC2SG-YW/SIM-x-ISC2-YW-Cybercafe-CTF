@@ -138,4 +138,5 @@ http://cs231n.stanford.edu/tiny-imagenet-200.zip
    source venv/bin/activate  # Linux/macOS
 
 
-[Done by Arekkusul]
+
+

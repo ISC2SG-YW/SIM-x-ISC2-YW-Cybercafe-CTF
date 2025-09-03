@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Exxeccelll!!!!!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>
+    :root { --line:#e5e7eb; --muted:#64748b; }
+    body { margin:0; font:15px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#0f172a; }
+    header { padding:1rem; border-bottom:1px solid var(--line); }
+    main { max-width:720px; margin:1.5rem auto; padding:0 1rem; display:grid; gap:1rem; }
+    .card { border:1px solid var(--line); border-radius:12px; background:#fafafa; padding:1rem; }
+    .muted{ color:var(--muted); }
+    input[type=file]{ width:100%; padding:.6rem; border:1px dashed var(--line); border-radius:10px; background:#fff; }
+    button{ margin-top:.6rem; background:#111827; color:#fff; border:0; border-radius:8px; padding:.55rem .9rem; cursor:pointer; }
+
+    .grid { display:grid; grid-template-columns: repeat(32, minmax(0, 1fr)); gap:0; width:100%; }
+    .cell { aspect-ratio:1/1; width:100%; background:#ffffff; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>J*B Simulation: Send me your Excel files</h1>
+    <p class="muted">Upload an .xlsx. We silently parse formatting.</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Upload</h2>
+      <form method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".xlsx" required>
+        <button type="submit">Upload</button>
+      </form>
+      <p class="muted" style="margin:.5rem 0 0">No errors displayed.</p>
+    </div>
+
+    <div class="card">
+      <div class="grid" id="grid">
+        {% for r in range(1, grid_rows+1) %}
+          {% for c in range(1, grid_cols+1) %}
+            <div class="cell" data-addr="{{ col_letter(c) }}{{ r }}"></div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (async () => {
+      try {
+        const res = await fetch('/fillmap', { credentials: 'same-origin' });
+        if (!res.ok) return;
+        const fmap = await res.json();         
+        const cells = document.querySelectorAll('.cell');
+        cells.forEach(el => {
+          const addr = el.getAttribute('data-addr');
+          const color = fmap[addr];
+          if (color) el.style.backgroundColor = color;
+        });
+      } catch (_) { /* silent boy 🤫🤫🤫🤫🤫🤫 */ }
+    })();
+  </script>
+</body>
+</html>

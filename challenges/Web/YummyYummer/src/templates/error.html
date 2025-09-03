@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Error {{ code }} — Yummy Yummer{% endblock %}
+
+{% block navbar %}
+  {% set show_search = false %}
+  {% include 'includes/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+  <div class="text-center py-5">
+    <div class="display-3 mb-3">{{ code }}</div>
+    <p class="lead mb-4">{{ message }}</p>
+    <a class="btn btn-yy" href="{{ url_for('home') }}">Back to Home</a>
+  </div>
+{% endblock %}

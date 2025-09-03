@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Login — Yummy Yummer{% endblock %}
+
+{% block navbar %}
+  {% set show_search = false %}
+  {% include 'includes/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-sm-10 col-md-6 col-lg-4">
+      <h1 class="h4 mb-3 text-center">Sign in</h1>
+      <form method="post" action="{{ url_for('login') }}" class="card p-3 shadow-sm mb-3">
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input class="form-control" name="username" autocomplete="username" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input class="form-control" type="password" name="password" autocomplete="current-password" required>
+        </div>
+        <button class="btn btn-primary w-100" type="submit">Login</button>
+      </form>
+      <form method="post" action="{{ url_for('guest') }}">
+        <button class="btn btn-outline-secondary w-100" type="submit">Continue as Guest</button>
+      </form>
+      <div class="text-center mt-3">
+        <a href="{{ url_for('menu') }}">Back to menu</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

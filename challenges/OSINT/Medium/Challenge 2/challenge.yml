@@ -1,0 +1,57 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "Where in the World?"
+author: "Stabb"
+category: OSINT
+description: |
+  A mysterious photo has surfaced online… but no caption, no tags, and no 
+  location information. All we know is that the answer lies in the details.  
+
+  Can you figure out **which city** this photo was taken in?  
+
+  Submit your answer as:
+  flag{City}
+
+  Example (format only): flag{Paris}
+value: 1000
+type: dynamic
+extra:
+     initial: 1000
+     decay: 25
+     minimum: 100
+
+# Flags specify answers that your challenge use. You should generally provide at least one.
+flags:
+    - flag{Osaka}
+
+# Topics are used to help tell what techniques/information a challenge involves
+topics:
+  - OSINT
+  - Reverse Image Search
+  - Geolocation
+
+# Tags are used to provide additional public tagging to a challenge
+tags:
+  - osint
+  - images
+  - geolocation
+
+# Provide paths to files from the same directory that this file is in
+files:
+  - challenge2.png
+
+# Hints are used to give players a way to buy or have suggestions.
+# Not required, but helpful.
+# hints:
+#   - { title: "Free Nudge", content: "Pay close attention to architecture and signs." }
+#   - { title: "Clue #2", content: "Reverse image search might be your friend here." , cost: 10 }
+#   - { title: "Clue #3", content: "This city is famous for its castles and street food." , cost: 20 }
+
+# The state of the challenge.
+# If omitted, the challenge is visible by default.
+# state: hidden
+
+# Specifies what version of the challenge specification was used.
+version: "1.0"

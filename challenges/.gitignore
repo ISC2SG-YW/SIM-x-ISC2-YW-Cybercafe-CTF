@@ -1,0 +1,38 @@
+# Terraform state and backup files
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+
+# Terraform working directory
+.terraform/
+
+# Override and variable files
+terraform.tfvars
+*.tfvars.json
+
+# Sensitive credentials
+*.pem
+*.key
+*.creds
+*.env
+
+# GCP credentials (if used)
+credentials.json
+application_default_credentials.json
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# OS-specific
+Thumbs.db
+/.venv
+Web/Exxeccelll\!\!\!\!\!/src/ztest.py
+/Web/Exxeccelll\!\!\!\!\!/sol

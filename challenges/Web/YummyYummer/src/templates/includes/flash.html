@@ -1,0 +1,13 @@
+<!-- templates/includes/flash.html -->
+{% with msgs = get_flashed_messages(with_categories=true) %}
+  {% if msgs %}
+    <div class="container mt-3">
+      {% for cat, msg in msgs %}
+        <div class="alert alert-{{ cat }} alert-dismissible fade show py-2" role="alert">
+          {{ msg }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}

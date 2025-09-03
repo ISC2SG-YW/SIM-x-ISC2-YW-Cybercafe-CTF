@@ -1,0 +1,40 @@
+/* static/mcd.css */
+:root{
+  --yy-red:#c70017;         /* McD-ish red */
+  --yy-red-dark:#990012;
+  --yy-gold:#ffd000;        /* golden arches yellow */
+  --yy-ink:#111;
+}
+
+body{ background:#fffdf6; }
+
+/* Navbar */
+.navbar.yy{
+  background: linear-gradient(180deg,var(--yy-red) 0%,var(--yy-red-dark) 100%);
+}
+.navbar.yy .navbar-brand{ color:#fff; font-weight:800; letter-spacing:-.2px; }
+.navbar.yy .navbar-brand:hover{ color:#fff; opacity:.9; }
+.navbar.yy .nav-link, .navbar.yy .navbar-text{ color:#ffe6e9; }
+.navbar.yy .btn-primary{
+  background:var(--yy-gold); border-color:var(--yy-gold); color:var(--yy-ink); font-weight:700;
+}
+.navbar.yy .btn-outline-secondary{ color:#fff; border-color:#fff; }
+
+/* Buttons */
+.btn-yy{ background:var(--yy-gold); border-color:var(--yy-gold); color:var(--yy-ink); font-weight:700; }
+.btn-yy:hover{ filter:brightness(.95); }
+
+/* Badges & table */
+.badge-yy{ background:var(--yy-gold); color:var(--yy-ink); }
+.table thead{ background:#fff3cd; }          /* light yellow header */
+.font-mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+
+/* Optional hero (use on home page) */
+.hero-yy{
+  background: radial-gradient(1200px 600px at 85% -100px, var(--yy-gold) 0%, rgba(255,208,0,0) 60%),
+              linear-gradient(180deg, var(--yy-red) 0%, var(--yy-red-dark) 100%);
+  color:#fff;
+  border-radius:1rem;
+}
+.hero-yy .display-4{ font-weight:800; letter-spacing:-.5px; }
+.hero-yy .lead{ font-weight:600; }

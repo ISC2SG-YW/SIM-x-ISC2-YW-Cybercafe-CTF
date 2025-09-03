@@ -1,0 +1,5 @@
+Which City am I in?
+
+Flag{City}
+
+Answer: Flag{Osaka}

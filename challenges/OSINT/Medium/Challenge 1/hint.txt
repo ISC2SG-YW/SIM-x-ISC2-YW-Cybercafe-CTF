@@ -1,0 +1,5 @@
+find where is this person going with his friend on a holiday?
+
+Flag{<NameofFriend>_<CountryOfVisit>_<LastDateofTrip>}
+
+answer: Flag{James_Vietnam_7}
