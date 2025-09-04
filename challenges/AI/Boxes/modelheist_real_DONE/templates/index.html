@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ModelHeist — Exfiltration & Weights</title></head>
+<body>
+<h1>ModelHeist</h1>
+<p>Download the model file and analyze its weights. The service should not expose secrets — but does it?</p>
+<ul>
+<li><a href="/download/model">Download model weights (.pt)</a></li>
+</ul>
+<form method="POST" action="/predict">
+<input type="text" name="nums" size="80" placeholder="Comma-separated 4 floats for demo inference (optional)">
+<button type="submit">Run</button>
+</form>
+</body>
+</html>

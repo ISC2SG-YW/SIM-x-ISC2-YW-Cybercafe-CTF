@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>BackstabberNet — Neural Trojan</title></head>
+<body>
+<h1>BackstabberNet</h1>
+<p>Upload a CIFAR-10 image. The model returns a class. Some inputs may trigger unusual behavior.</p>
+<form method="POST" action="/predict" enctype="multipart/form-data">
+<input type="file" name="file" accept="image/*" required>
+<button type="submit">Classify</button>
+</form>
+<hr>
+<p>Note: The model appears accurate on clean data…</p>
+</body>
+</html>
