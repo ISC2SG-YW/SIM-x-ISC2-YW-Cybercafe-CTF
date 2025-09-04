@@ -19,7 +19,7 @@ This CTF suite contains **4 realistic AI security challenges** focused on simula
 
 ---
 
-### 1. ChatterBox - *Prompt Injection* [Easy]
+### 1. ChatterBox - *Prompt Injection* [Easy] -- cant do it, too big
 
 **Scenario**:  
 You’re given access to an AI chatbot. Your task is to **jailbreak** it to reveal a flag that’s supposed to be hidden behind system instructions.
@@ -45,7 +45,7 @@ https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF
 Fine-Tuning: LoRA or QLoRA with low-rank adapters
 
 ---
-### 2. BackstabberNet - *Neural Trojan / Backdoor* [Medium]
+### 2. BackstabberNet - *Neural Trojan / Backdoor* [Hard]
 
 **Scenario**:  
 You’re interacting with a classifier. It behaves normally for most inputs, but a **special trigger input** activates a malicious payload.
@@ -69,7 +69,7 @@ Will be a Trained Convolutional Neural Network (CNN) for classifying images in t
 
 ---
 
-### 3. Echo Chamber - *Membership Inference Attack (MIA)* [Hard]
+### 3. Echo Chamber - *Membership Inference Attack (MIA)* [Medium]
 
 **Scenario**:  
 A language model was trained on a private dataset. Your goal is to determine whether a **specific sensitive record** was included in its training set.
@@ -97,7 +97,7 @@ Trainer API from transformers
 
 ---
 
-### 4. ModelHeist_real - *Model Exfiltration & Weight Analysis* [Hard???] tbh dis one idk, spare challenge.
+### 4. ModelHeist_real - *Model Exfiltration & Weight Analysis* [Easy] tbh dis one idk, spare challenge.
 
 **Scenario**:  
 The AI model binary is hosted on a poorly secured endpoint. Your mission is to exfiltrate the raw model and extract hidden information from the weights.
