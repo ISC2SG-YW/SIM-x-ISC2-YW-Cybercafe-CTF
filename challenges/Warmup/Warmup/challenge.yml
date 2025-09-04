@@ -1,0 +1,13 @@
+name: I_Can_Read
+author: "me"
+category: Warmup
+description: Read our rules!
+
+value: 100
+type: standard
+
+flags:
+  - flag{C0nGr47uL4710n_Y0u_C4n_R34d!}
+
+state: hidden
+version: "1.0"

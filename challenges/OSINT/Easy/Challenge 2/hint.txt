@@ -1,0 +1,5 @@
+find the Black Alpaca name and date of the picture
+
+Flag{<Name>_<DDMM>}
+
+answer: Flag{Aragon_1906}

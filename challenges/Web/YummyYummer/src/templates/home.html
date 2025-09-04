@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Yummy Yummer — Home{% endblock %}
+
+{% block navbar %}
+  {% set show_search = false %}
+  {% include 'includes/navbar.html' %}
+{% endblock %}
+
+{% block styles %}
+<style>
+  .yy-hero {
+    background: radial-gradient(1200px 600px at 85% -100px, #ffd000 0%, rgba(255,208,0,0.0) 60%),
+                linear-gradient(180deg, #c70017 0%, #990012 100%);
+    color: #fff;
+  }
+  .yy-hero .display-4 { font-weight: 800; letter-spacing: -0.5px; }
+  .yy-hero .lead { font-weight: 600; }
+  .yy-card-icon { font-size: 2rem; line-height: 1; }
+</style>
+{% endblock %}
+
+{% block content %}
+  <section class="yy-hero rounded-4 p-4 p-md-5 shadow-sm">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <h1 class="display-4 mb-2">Fast food, fast smiles.</h1>
+        <p class="lead mb-4">Burgers, fries, shakes — hot, fresh, and ready.</p>
+        <div class="d-flex gap-2">
+          <a class="btn btn-warning btn-lg fw-bold" href="{{ url_for('menu') }}">View Menu</a>
+          {% if not session.get('username') %}
+            <a class="btn btn-outline-light btn-lg" href="{{ url_for('login') }}">Login</a>
+          {% else %}
+            <form method="post" action="{{ url_for('logout') }}">
+              <button class="btn btn-outline-light btn-lg" type="submit">Logout</button>
+            </form>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-lg-5 mt-4 mt-lg-0">
+        <div class="bg-light rounded-4 p-4 text-center shadow-sm">
+          <div class="yy-card-icon mb-2">🍔🍟🥤</div>
+          <div class="h5 mb-1">Cravings, sorted.</div>
+          <p class="text-secondary mb-0">Order classics and seasonal specials in minutes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-4">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <div class="yy-card-icon">⚡</div>
+            <h5 class="card-title mt-2">Quick & hot</h5>
+            <p class="card-text text-secondary">Cooked fast, served fresh — every time.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <div class="yy-card-icon">💛</div>
+            <h5 class="card-title mt-2">Crowd favorites</h5>
+            <p class="card-text text-secondary">Golden fries, iconic burgers, creamy shakes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <div class="yy-card-icon">🌙</div>
+            <h5 class="card-title mt-2">Late-night bites</h5>
+            <p class="card-text text-secondary">Open when the cravings hit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
