@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  yummyyummer:
+    build: ./YummyYummer/dist
+    ports:
+      - "8001:6767"
+    restart: unless-stopped
+
+  exxeccelll:
+    build: ./Exxeccelll/dist
+    ports:
+      - "8002:7676"
+    restart: unless-stopped
