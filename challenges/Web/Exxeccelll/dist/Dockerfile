@@ -21,7 +21,7 @@ RUN adduser -D -u 10001 appuser && \
     mkdir -p /app/uploads && \
     chown -R appuser:appuser /app
 
-ARG FLAG="flag{this_is_what_you_gonna_be_doing_when_you_get_a_J_O_B}"
+ARG FLAG="this_is_what_you_gonna_be_doing_when_you_get_a_J_O_B"
 RUN printf "%s" "${FLAG}" > /flag.txt && chmod 0644 /flag.txt
 
 USER appuser
