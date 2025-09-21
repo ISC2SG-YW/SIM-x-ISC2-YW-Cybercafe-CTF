@@ -24,6 +24,7 @@ You will realised that there is a suspicious Ping data, out of the random with o
 ![](./img/mislead.png)
 
 Since we know that the ping might be more worth while to investigate as the machines never really connected to the "www.telnetsux.com" website, we can look at the HEX data of the ping packet (Commonly used to hide data in plain sight in networks) [https://medium.com/aardvark-infinity/icmp-based-data-exfiltration-leaking-information-through-disguised-ping-requests-5e9cbb160d74]
+
 You will then get this below
 ![](./img/pingData2.png)
 
