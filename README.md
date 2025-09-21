@@ -1,5 +1,5 @@
 # SIM-x-ISC2-YW-Cybercafe-CTF
-Source files for the SIM x ICS2 Youth Wing Cybercafe CTF held in September 2025.
+Source files and writeup for the SIM x ICS2 Youth Wing Cybercafe CTF held in September 2025.
 
 ## Difficulty Distribution
 | Category | Easy | Medium | Hard | Total |
