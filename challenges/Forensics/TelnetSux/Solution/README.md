@@ -11,7 +11,7 @@ Looking at the PCAP file, you can do the same "Follow TCP Stream" on one of the 
 ![](./img/telnetComms1.png)
 ![](./img/telnetComms2.png)
 
-In this Telnet chat, you can realise that they are sending the data via another channel, while probably still encrypting the data as one of the breads said that their password is his favourite character that is in the currently airing anime. So I realised that many people got stuck here in the actual CTF event. During the time of creating this challenge, the currently airing anime (in SG context), was JJK and Demon Slayer. (The actual anime in question here is Demon Slayer)
+In this Telnet chat, you can realise that they are sending the data via another channel, while probably still encrypting the data as one of the breads said that their password is his favourite character that is in the currently airing anime. So I realised that many people got stuck here in the actual CTF event. During the time of creating this challenge, the currently airing anime (in SG context), was JJK and Demon Slayer Infinity Castle Arc. (The actual anime in question here is Demon Slayer)
 If you went to GV or Shaw Theatres' website, you would have gotten that information. For the actual password, it was quite easy, but you would first need the data right?
 
 To get the data, you will need to analyse the PCAP further. To do so, we can note that one of the bread said he received the data, which allows us to narrow down when and which packet the data was sent
